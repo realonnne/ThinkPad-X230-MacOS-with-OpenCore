@@ -1,20 +1,21 @@
-# ThinkPad X230 MacOS with OpenCore
+#具有OpenCore的ThinkPad X230 MacOS
 
-MacOS (Currently Catalina `10.15.6`) working on ThinkPad X230
+在ThinkPad X230上运行的MacOS（当前为Catalina`10.15.6`）
 
-**Status: Work In Progress**
+**状态：进行中**
 
 <img align="right" src="https://raw.githubusercontent.com/banhbaoxamlan/X230-Hackintosh/master/Other/README%20Resources/x230-catalina.png" alt="ThinkPad X230 Catalina" width="300"/>
 
 [![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.1-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.6-brightgreen.svg)](https://www.apple.com/macos/catalina/)
 
-**DISCLAIMER:** Read the entire README before you start. I am not responsible for any damages you may cause.
+**免责声明：**
+开始之前请阅读整个自述文件。我对您可能造成的任何损失不承担任何责任。
 
-## Introduction
+## 介绍
 
 <details>
 
-<summary><strong>My hardware</strong></summary>
+<summary><strong>我的硬件</strong></summary>
 
 | Specifications      | Detail                                      |
 | :------------------ | :------------------------------------------ |
@@ -34,7 +35,7 @@ MacOS (Currently Catalina `10.15.6`) working on ThinkPad X230
 
 <details>
 
-<summary><strong>Hardware compatibility</strong></summary>
+<summary><strong>硬件兼容性</strong></summary>
 
 This EFI will suit any X230 regardless of CPU model, amount of RAM, display resolution, and internal storage.
 
@@ -47,7 +48,7 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 
 <details>
 
-<summary><strong>Main software</strong></summary>
+<summary><strong>主要软件</strong></summary>
 
 | Component      | Version           |
 | :------------- | :---------------- |
@@ -58,7 +59,7 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 
 <details>
 
-<summary><strong>Kernel extensions</strong></summary>
+<summary><strong>内核扩展</strong></summary>
 
 | Kext                | Version |
 | :------------------ | :------ |
@@ -77,7 +78,7 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 
 <details>
 
-<summary><strong>UEFI drivers</strong></summary>
+<summary><strong>UEFI驱动程序</strong></summary>
 
 | Driver          | Version           |
 | :-------------- | :---------------- |
@@ -87,25 +88,25 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 </details>
 
 
-## Installation
+## 安装
 
 <details>
 
-<summary><strong>How to install macOS</strong></summary>
+<summary><strong>如何安装macOS</strong></summary>
 
-To install macOS follow the guides provided by [Dortania](https://dortania.github.io/getting-started/)
+要安装macOS，请遵循提供的指南 [Dortania](https://dortania.github.io/getting-started/)
 
-Useful tools by [CorpNewt](https://github.com/corpnewt) and [headkaze](https://github.com/headkaze/Hackintool)
+有用的工具 [CorpNewt](https://github.com/corpnewt) 和 [headkaze](https://github.com/headkaze/Hackintool)
 
-Complete EFI is available in the [releases](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) page
+完整的EFI可在 [releases](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) 页
 
 </details>
 
 <details>
 
-<summary><strong>BIOS settings :100:</strong></summary>
+<summary><strong>BIOS设置 :100:</strong></summary>
 
-A simple method to install a modified BIOS is available [here](https://github.com/n4ru/1vyrain/) (no external programmer required).
+提供了一种安装修改后的BIOS的简单方法 [here](https://github.com/n4ru/1vyrain/) (无需外部编程器).
 
 | Main | Sub #1                                 | Sub #2 | Sub #3 | Setting |
 | :------------ | :----------- | ------------- | ------------- | ------------- |
@@ -270,4 +271,3 @@ If you are using different model and alternative kext from Other folder does not
 [MSzturc](https://github.com/MSzturc) for ThinkpadAssistant
 
 [simprecicchiani](https://github.com/simprecicchiani) for inspirational ThinkPad configurations
-# kkkkkkk
