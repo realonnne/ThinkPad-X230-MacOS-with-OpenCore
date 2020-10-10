@@ -154,6 +154,7 @@
 <details>
 
 <summary><strong>CPU电源管理</strong></summary>
+
 　　推荐额外的步骤来改善与优化电池寿命CPU电源管理:
 　　
 　　打开终端,复制并粘贴以下命令:
@@ -257,3 +258,19 @@
 - [ ] 指点杆从睡眠中醒来后不工作
 
 </details>
+
+## Credits
+
+[Apple](https://www.apple.com) for macOS
+
+[Acidanthera](https://github.com/acidanthera) for all the kexts/utilities that they made
+
+[Rehabman](https://github.com/RehabMan) and [Daliansky](https://github.com/daliansky) for the patches and guides and kexts
+
+[George Kushnir](https://github.com/n4ru) for modified BIOS
+
+[Dortania](https://github.com/dortania) for for the OpenCore Install Guide
+
+[MSzturc](https://github.com/MSzturc) for ThinkpadAssistant
+
+[simprecicchiani](https://github.com/simprecicchiani) for inspirational ThinkPad configurations
