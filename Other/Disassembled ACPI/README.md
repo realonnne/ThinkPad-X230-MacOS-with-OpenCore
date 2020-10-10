@@ -1,22 +1,22 @@
 # ACPI
 
-| Patch          | Remark                                      |
+|   补丁         | 备注                                        |
 | -------------- | ------------------------------------------- |
-| SSDT-AC        | Add _PRW AC Adapter                         |
-| SSDT-ALS0      | Fix Ambient Light Sensor                    |
-| SSDT-BAT0      | Fix battery Indicator                       |
-| SSDT-EXT4      | Fix screen not waking                       |
-| SSDT-EXT5      | Fix LED not working after wake              |
-| SSDT-GPRW      | Fix immediate wake after sleep              |
-| SSDT-HRTF      | Fix HPET, RTC amd TIMR                      |
-| SSDT-KBD       | Fix Keyboard Map, Trackpoint and Trackpad   |
-| SSDT-LID       | PNP0C0E forced sleep                        |
-| SSDT-MCHC-SBUS | Add missing SBUS, MCHC                      |
-| SSDT-PMCR      | Add PMCR                                    |
-| SSDT-PNLF      | Fix backlight                               |
-| SSDT-PTSWAK    | Fix sleep issues                            |
-| SSDT-PWRB      | Add Power Button                            |
-| SSDT-SDC.dsl   | Disabled SD Card Reader                     |
-| SSDT-WIFI      | Fix DW1510 (not need if you use DW1550,etc) |
-| SSDT-XDSM      | Redirect _DSM to native XDSM on non-MacOS   |
-| SSDT-XOSI      | Operating System Patch                      |
+| SSDT-AC        | 添加_PRW AC适配器                           |
+| SSDT-ALS0      | 修复环境光传感器                            |
+| SSDT-BAT0      | 修复电池指示器                              |
+| SSDT-EXT4      | 修复屏幕不清醒                              |
+| SSDT-EXT5      | 修复了屏幕醒来后不工作                      |
+| SSDT-GPRW      | 修复后立即唤醒睡眠                          |
+| SSDT-HRTF      | 修复HPET, RTC amd TIMR                      |
+| SSDT-KBD       | 修复键盘地图,小红点和触控板                 |
+| SSDT-LID       | PNP0C0E强迫睡眠                             |
+| SSDT-MCHC-SBUS | 添加缺失的 SBUS, MCHC                       |
+| SSDT-PMCR      | 添加PMCR                                    |
+| SSDT-PNLF      | 修复背光                                    |
+| SSDT-PTSWAK    | 解决睡眠                                    |
+| SSDT-PWRB      | 添加电源按钮                                |
+| SSDT-SDC.dsl   | 禁用SD读卡器                                |
+| SSDT-WIFI      | 修复DW1510(不需要如果您使用DW1550,等)       |
+| SSDT-XDSM      | 重定向_DSM本机XDSM non-MacOS                |
+| SSDT-XOSI      | 操作系统补丁                                |
