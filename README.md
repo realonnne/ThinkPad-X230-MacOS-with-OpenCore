@@ -37,13 +37,12 @@
 
 <summary><strong>硬件兼容性</strong></summary>
 
-　这EFI适合任何X230不管CPU模型,大量的内存,显示分辨率和内部存储。
-　　
-　　1. 可选的自定义CPU电源管理指南(见下面安装后)
+This EFI will suit any X230 regardless of CPU model, amount of RAM, display resolution, and internal storage.
 
-  1.修改
-　　- 1440 p显示模型应该改变 `NVRAM>>Add>>7C436110-AB2A-4BBB-A880-FE41995C9F82>>UIScale`: 2
-     ——X220 7-row键盘应该使用 : `SSDT-X220-KBD.aml`
+  1. Optional custom CPU Power Management guide (see below post-install)
+  1. Modified
+      - 1440p display models should change `NVRAM>>Add>>7C436110-AB2A-4BBB-A880-FE41995C9F82>>UIScale`: 2
+      - X220 7-row keyboard should use : `SSDT-X220-KBD.aml`
 
 </details>
 
@@ -84,7 +83,7 @@
 | Driver          | Version           |
 | :-------------- | :---------------- |
 | HfsPlus.efi     | OcBinaryData      |
-| OpenRuntime.efi | OpenCorePkg 0.6.2 |
+| OpenRuntime.efi | OpenCorePkg 0.6.1 |
 
 </details>
 
@@ -127,17 +126,15 @@
 
 ## 安装后
 
-
 <details>
 
 <summary><strong>生成自己的SMBIOS</strong></summary>
 
-　　对于设置SMBIOS信息,使用[GenSMBIOS] (https://github.com/corpnewt/GenSMBIOS)
-　　
-　　——运行GenSMBIOS,选择选项1下载MacSerial SMBIOS选项3和选择
-　　
-　　——MacBookPro10 2
+对于设置SMBIOS信息,使用[GenSMBIOS] (https://github.com/corpnewt/GenSMBIOS)
 
+- GenSMBIOS运行,选择选项1下载MacSerial SMBIOS选项3和选择
+
+  - MacBookPro10,2
 
 - 打开 `Config.plist`,找到PlatformInfo > >通用
 
@@ -155,12 +152,11 @@
 
 <summary><strong>CPU电源管理</strong></summary>
 
-　　推荐额外的步骤来改善与优化电池寿命CPU电源管理:
-　　
-　　打开终端,复制并粘贴以下命令:
-　　
-　　”“bash
+推荐额外的步骤来改善与优化电池寿命CPU电源管理:
 
+- 打开终端,复制并粘贴以下命令:
+
+  ```bash
   curl -o ~/ssdtPRGen.sh https://raw.githubusercontent.com/Piker-Alpha/ssdtPRGen.sh/master/ssdtPRGen.sh
   chmod +x ~/ssdtPRGen.sh
   ./ssdtPRGen.sh
@@ -168,23 +164,24 @@
 
 - 一个定制的 `SSDT.aml` 将在目录 **/Users/yourusername/Library/ssdtPRGen**中
 
+
 - 重命名为 `SSDT-PM.aml` ,复制到 **EFI/OC/ACPI/**
 
 - 打开 `Config.plist`, 添加 `ACPI>>Add>>SSDT-PM.aml`
 
-- 重启电脑
+- 重启
 
 </details>
 
 <details>
 
-<summary><strong>USB端口映射</strong></summary>
+<summary><strong>USB 端口模拟</strong></summary>
 
-　　如果您使用的是不同的模型和替代kext从不为你工作。试一试:
-　　
-　　——(USBMap) (https://github.com/corpnewt/USBMap)
-　　
-　　——(Hackintool) (https://github.com/headkaze/Hackintool)
+如果您使用的是不同的模型和kext从不为你工作。试一试:
+
+- [USBMap](https://github.com/corpnewt/USBMap)
+
+- [Hackintool](https://github.com/headkaze/Hackintool)
 
 </details>
 
@@ -192,58 +189,59 @@
 
 <summary><strong>功能齐全的多媒体Fn的钥匙</strong></summary>
 
-　　下载并安装(ThinkpadAssistant) (https://github.com/MSzturc/ThinkpadAssistant/releases)
-　　——打开应用程序,检查“登录启动”选项
+- 下载并安装(ThinkpadAssistant) (https://github.com/MSzturc/ThinkpadAssistant/releases)
+- 打开应用程序,检查“登录启动”选项
+
 </details>
 
 <details>
 
-<summary><strong>使用敲击PrtSc截图快捷键</strong></summary>
+<summary><strong>使用PrtSc截图快捷键</strong></summary>
 
 - 路径 `SystemPreferences > Keyboard > Shortcuts > Screenshots`
-　　——点击截图和记录选项键映射
-　　——按“敲击PrtSc”在你的键盘(应该是“F13”)
+- 点击截图和记录选项键映射
+- “敲击PrtSc”在你的键盘(应该是“F13”)
 
 </details>
 
 <details>  
 <summary><strong>Mac引导装载程序GUI</strong></summary>
-　——下载二进制资源(https://github.com/acidanthera/OcBinaryData)和(OpenCanopy.efi) (https://github.com/acidanthera/OpenCorePkg/releases)
-　　-副本(资源文件夹)(https://github.com/acidanthera/OcBinaryData)“EFI / OC”
-　　——添加OpenCanopy。efi“efi / OC /驱动程序”
-　　——这些变化在“config.plist”:
+
+- 下载二进制资源(https://github.com/acidanthera/OcBinaryData)和(OpenCanopy.efi) (https://github.com/acidanthera/OpenCorePkg/releases)
+- 复制 [Resources folder](https://github.com/acidanthera/OcBinaryData) 到 `EFI/OC`
+- 添加 OpenCanopy.efi 到 `EFI/OC/Drivers`
+- 添加这些改变到 `config.plist`:
     - `Misc >> Boot >> PickerMode`: `External`
     - `Misc >> Boot >> PickerAttributes`:`1`
-    - `UEFI >> Drivers` and add `OpenCanopy.efi`
+    - `UEFI >> Drivers` 并添加 `OpenCanopy.efi`
 
 </details>
 
-## Status
+## 状态
 
 <details>
 <summary><strong>什么在工作 :white_check_mark:</strong></summary>
 
 - [x] 电池百分比
-　　——[x]蓝牙
-　　——[x]亮度
-　　——[x]相机
-　　——[x] CPU电源管理
-　　——[x]码头支持“ThinkPad UltraSeries 3 '
-　　——英特尔HD 4000 - [x] GPU图形QE / CI
-　　——[x]英特尔以太网
-　　——[x]键盘的数量和亮度快捷键
-　　——[x]睡眠/唤醒
-　　——[x]声音的耳机自动检测、静音、音量控制完全工作的
-　　——[x] Touchpad的手指滑动作品的
-　　——[x]指点杆的作品完美。就像在Windows或Linux上的
-
-　　——[x] eGPU  (由 [lese9855](https://github.com/lese9855) 已经证实 [#11](https://github.com/banhbaoxamlan/X230-Hackintosh/issues/11))
+- [x] 蓝牙
+- [x] 亮度
+- [x] 相机
+- [x] CPU电源管理
+- [x] 码头支持“ThinkPad UltraSeries 3 '
+- [x] 英特尔HD 4000 - [x] GPU图形QE / CI
+- [x] 英特尔以太网
+- [x] 键盘的数量和亮度快捷键
+- [x] 睡眠/唤醒
+- [x] 声音的耳机自动检测、静音、音量控制完全工作的
+- [x] Touchpad的手指滑动作品的
+- [x] 小红帽很完美。就像在Windows或Linux上一样
+- [x]  eGPU  (由 [lese9855](https://github.com/lese9855) 已经证实 [#11](https://github.com/banhbaoxamlan/X230-Hackintosh/issues/11))
 
 </details>
 
 <details>
 
-<summary><strong>什么不可用 :warning:</strong></summary>
+<summary><strong>什么不可以用 :warning:</strong></summary>
 
 - [ ] 指纹阅读器
 - [ ] VGA
@@ -253,24 +251,9 @@
 
 <details>
 
-<summary><strong>已知Bug :heavy_exclamation_mark:</strong></summary>
+<summary><strong>已知Bugr :heavy_exclamation_mark:</strong></summary>
 
-- [ ] 指点杆从睡眠中醒来后不工作
+- [ ] 小红帽从睡眠中醒来后不工作
 
 </details>
 
-## Credits
-
-[Apple](https://www.apple.com) for macOS
-
-[Acidanthera](https://github.com/acidanthera) for all the kexts/utilities that they made
-
-[Rehabman](https://github.com/RehabMan) and [Daliansky](https://github.com/daliansky) for the patches and guides and kexts
-
-[George Kushnir](https://github.com/n4ru) for modified BIOS
-
-[Dortania](https://github.com/dortania) for for the OpenCore Install Guide
-
-[MSzturc](https://github.com/MSzturc) for ThinkpadAssistant
-
-[simprecicchiani](https://github.com/simprecicchiani) for inspirational ThinkPad configurations
