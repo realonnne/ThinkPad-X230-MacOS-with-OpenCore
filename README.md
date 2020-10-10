@@ -37,12 +37,13 @@
 
 <summary><strong>硬件兼容性</strong></summary>
 
-This EFI will suit any X230 regardless of CPU model, amount of RAM, display resolution, and internal storage.
+　这EFI适合任何X230不管CPU模型,大量的内存,显示分辨率和内部存储。
+　　
+　　1. 可选的自定义CPU电源管理指南(见下面安装后)
 
-  1. Optional custom CPU Power Management guide (see below post-install)
-  1. Modified
-      - 1440p display models should change `NVRAM>>Add>>7C436110-AB2A-4BBB-A880-FE41995C9F82>>UIScale`: 2
-      - X220 7-row keyboard should use : `SSDT-X220-KBD.aml`
+  1.修改
+　　- 1440 p显示模型应该改变 `NVRAM>>Add>>7C436110-AB2A-4BBB-A880-FE41995C9F82>>UIScale`: 2
+     ——X220 7-row键盘应该使用 : `SSDT-X220-KBD.aml`
 
 </details>
 
@@ -83,7 +84,7 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 | Driver          | Version           |
 | :-------------- | :---------------- |
 | HfsPlus.efi     | OcBinaryData      |
-| OpenRuntime.efi | OpenCorePkg 0.6.1 |
+| OpenRuntime.efi | OpenCorePkg 0.6.2 |
 
 </details>
 
@@ -124,92 +125,92 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 
 </details>
 
-## Post-install
+## 安装后
+
 
 <details>
 
-<summary><strong>Generate your own SMBIOS</strong></summary>
+<summary><strong>生成自己的SMBIOS</strong></summary>
 
-For setting up the SMBIOS info, use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
+　　对于设置SMBIOS信息,使用[GenSMBIOS] (https://github.com/corpnewt/GenSMBIOS)
+　　
+　　——运行GenSMBIOS,选择选项1下载MacSerial SMBIOS选项3和选择
+　　
+　　——MacBookPro10 2
 
-- Run GenSMBIOS, pick option 1 for downloading MacSerial and Option 3 for selecting out SMBIOS
 
-  - MacBookPro10,2
+- 打开 `Config.plist`,找到PlatformInfo > >通用
 
-- Open `Config.plist`, find PlatformInfo >> Generic
+  - 复制 `Serial` 到 SystemSerialNumber.
 
-  - The `Serial` part gets copied to SystemSerialNumber.
+  - 复制 `Board Serial` 到 MLB.
 
-  - The `Board Serial` part gets copied to MLB.
+  - 复制 `SmUUID` 到 SystemUUID.
 
-  - The `SmUUID` part gets copied to SystemUUID.
-
-**Reminder that you want either an invalid serial or valid serial numbers but those not in use, you want to get a message back like: "Invalid Serial" or "Purchase Date not Validated"** [Apple Check Coverage](https://checkcoverage.apple.com/)
+* *提醒,你想要一个无效的串行或有效的序列号,但那些没有在使用,你想拿回一个消息:“Purchase Date not Validated”* *(苹果序列号检查)(https://checkcoverage.apple.com/)
 
 </details>
 
 <details>
 
-<summary><strong>CPU power management</strong></summary>
+<summary><strong>CPU电源管理</strong></summary>
+　　推荐额外的步骤来改善与优化电池寿命CPU电源管理:
+　　
+　　打开终端,复制并粘贴以下命令:
+　　
+　　”“bash
 
-Recommended additional steps to improve battery life with optimized CPU power management:
-
-- Open Terminal, copy and paste the following command:
-
-  ```bash
   curl -o ~/ssdtPRGen.sh https://raw.githubusercontent.com/Piker-Alpha/ssdtPRGen.sh/master/ssdtPRGen.sh
   chmod +x ~/ssdtPRGen.sh
   ./ssdtPRGen.sh
   ```
 
-- A customized `SSDT.aml` for your specific machine will now be in the directory **/Users/yourusername/Library/ssdtPRGen**
+- 一个定制的 `SSDT.aml` 将在目录 **/Users/yourusername/Library/ssdtPRGen**中
 
-- Rename to `SSDT-PM.aml` , and copy to **EFI/OC/ACPI/**
+- 重命名为 `SSDT-PM.aml` ,复制到 **EFI/OC/ACPI/**
 
-- Open `Config.plist`, enable `ACPI>>Add>>SSDT-PM.aml`
+- 打开 `Config.plist`, 添加 `ACPI>>Add>>SSDT-PM.aml`
 
-- Reboot
-
-</details>
-
-<details>
-
-<summary><strong>USB ports map</strong></summary>
-
-If you are using different model and alternative kext from Other folder does not work for you. Try:
-
-- [USBMap](https://github.com/corpnewt/USBMap)
-
-- [Hackintool](https://github.com/headkaze/Hackintool)
+- 重启电脑
 
 </details>
 
 <details>
 
-<summary><strong>Fully functioning multimedia Fn keys</strong></summary>
+<summary><strong>USB端口映射</strong></summary>
 
-- Download and install [ThinkpadAssistant](https://github.com/MSzturc/ThinkpadAssistant/releases)
-- Open the app and check the `launch on login` option
+　　如果您使用的是不同的模型和替代kext从不为你工作。试一试:
+　　
+　　——(USBMap) (https://github.com/corpnewt/USBMap)
+　　
+　　——(Hackintool) (https://github.com/headkaze/Hackintool)
 
 </details>
 
 <details>
 
-<summary><strong>Use PrtSc key as Screenshot shortcut</strong></summary>
+<summary><strong>功能齐全的多媒体Fn的钥匙</strong></summary>
 
-- Go under `SystemPreferences > Keyboard > Shortcuts > Screenshots`
-- Click on `Screenshot and recording options` key map
-- Press `PrtSc` on your keyboard (it should came out as `F13`)
+　　下载并安装(ThinkpadAssistant) (https://github.com/MSzturc/ThinkpadAssistant/releases)
+　　——打开应用程序,检查“登录启动”选项
+</details>
+
+<details>
+
+<summary><strong>使用敲击PrtSc截图快捷键</strong></summary>
+
+- 路径 `SystemPreferences > Keyboard > Shortcuts > Screenshots`
+　　——点击截图和记录选项键映射
+　　——按“敲击PrtSc”在你的键盘(应该是“F13”)
 
 </details>
 
 <details>  
-<summary><strong>Mac bootloader GUI</strong></summary>
-
-- Download [Binary Resources](https://github.com/acidanthera/OcBinaryData) and [OpenCanopy.efi](https://github.com/acidanthera/OpenCorePkg/releases)
-- Copy the [Resources folder](https://github.com/acidanthera/OcBinaryData) to `EFI/OC`
-- Add OpenCanopy.efi to `EFI/OC/Drivers`
-- Make these changes inside `config.plist`:
+<summary><strong>Mac引导装载程序GUI</strong></summary>
+　——下载二进制资源(https://github.com/acidanthera/OcBinaryData)和(OpenCanopy.efi) (https://github.com/acidanthera/OpenCorePkg/releases)
+　　-副本(资源文件夹)(https://github.com/acidanthera/OcBinaryData)“EFI / OC”
+　　——添加OpenCanopy。efi“efi / OC /驱动程序”
+　　——这些变化在“config.plist”:
     - `Misc >> Boot >> PickerMode`: `External`
     - `Misc >> Boot >> PickerAttributes`:`1`
     - `UEFI >> Drivers` and add `OpenCanopy.efi`
@@ -219,55 +220,40 @@ If you are using different model and alternative kext from Other folder does not
 ## Status
 
 <details>
-<summary><strong>What's working :white_check_mark:</strong></summary>
+<summary><strong>什么在工作 :white_check_mark:</strong></summary>
 
-- [x] Battery Percentage
-- [x] Bluetooth
-- [x] Brightness
-- [x] Camera
-- [x] CPU Power Management
-- [x] Dock Support `ThinkPad UltraSeries 3`
-- [x] GPU Intel HD 4000 Graphics QE/CI
-- [x] Intel Ethernet
-- [x] Keyboard `Volume and brightness hotkeys`
-- [x] Sleep/Wake
-- [x] Sound `Automatic headphone detection, mute, volume controls fully working`
-- [x] Touchpad `1-4 fingers swipe works`
-- [x] TrackPoint  `Works perfectly. Just like on Windows or Linux`
-- [x] eGPU  (Thanks [lese9855](https://github.com/lese9855) have confirmed it [#11](https://github.com/banhbaoxamlan/X230-Hackintosh/issues/11))
+- [x] 电池百分比
+　　——[x]蓝牙
+　　——[x]亮度
+　　——[x]相机
+　　——[x] CPU电源管理
+　　——[x]码头支持“ThinkPad UltraSeries 3 '
+　　——英特尔HD 4000 - [x] GPU图形QE / CI
+　　——[x]英特尔以太网
+　　——[x]键盘的数量和亮度快捷键
+　　——[x]睡眠/唤醒
+　　——[x]声音的耳机自动检测、静音、音量控制完全工作的
+　　——[x] Touchpad的手指滑动作品的
+　　——[x]指点杆的作品完美。就像在Windows或Linux上的
+
+　　——[x] eGPU  (由 [lese9855](https://github.com/lese9855) 已经证实 [#11](https://github.com/banhbaoxamlan/X230-Hackintosh/issues/11))
 
 </details>
 
 <details>
 
-<summary><strong>What's not working :warning:</strong></summary>
+<summary><strong>什么不可用 :warning:</strong></summary>
 
-- [ ] Fingerprint Reader
+- [ ] 指纹阅读器
 - [ ] VGA
-- [ ] SD Card Reader (Disable with `SSDT-SDC.aml`)
+- [ ] SD读卡器 (禁用`SSDT-SDC.aml`)
 
 </details>
 
 <details>
 
-<summary><strong>Bug tracker :heavy_exclamation_mark:</strong></summary>
+<summary><strong>已知Bug :heavy_exclamation_mark:</strong></summary>
 
-- [ ] Trackpoint not working after wake from sleep
+- [ ] 指点杆从睡眠中醒来后不工作
 
 </details>
-
-## Credits
-
-[Apple](https://www.apple.com) for macOS
-
-[Acidanthera](https://github.com/acidanthera) for all the kexts/utilities that they made
-
-[Rehabman](https://github.com/RehabMan) and [Daliansky](https://github.com/daliansky) for the patches and guides and kexts
-
-[George Kushnir](https://github.com/n4ru) for modified BIOS
-
-[Dortania](https://github.com/dortania) for for the OpenCore Install Guide
-
-[MSzturc](https://github.com/MSzturc) for ThinkpadAssistant
-
-[simprecicchiani](https://github.com/simprecicchiani) for inspirational ThinkPad configurations
