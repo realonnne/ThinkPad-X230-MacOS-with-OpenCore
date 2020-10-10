@@ -6,7 +6,7 @@
 
 <img align="right" src="https://ftp.bmp.ovh/imgs/2020/10/afdccda005d2aed8.png" alt="ThinkPad X230 Catalina" width="300"/>
 
-[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.1-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.6-brightgreen.svg)](https://www.apple.com/macos/catalina/)
+[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.2-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.6-brightgreen.svg)](https://www.apple.com/macos/catalina/)
 
 **免责声明：**
 开始之前请阅读整个自述文件。我对您可能造成的任何损失不承担任何责任。
@@ -53,7 +53,7 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 | Component      | Version           |
 | :------------- | :---------------- |
 | MacOS Catalina | 10.15.6 (19G2021) |
-| OpenCore       | 0.6.1             |
+| OpenCore       | 0.6.2             |
 
 </details>
 
@@ -83,7 +83,7 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 | Driver          | Version           |
 | :-------------- | :---------------- |
 | HfsPlus.efi     | OcBinaryData      |
-| OpenRuntime.efi | OpenCorePkg 0.6.1 |
+| OpenRuntime.efi | OpenCorePkg 0.6.2 |
 
 </details>
 
