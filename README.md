@@ -98,7 +98,7 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 
 有用的工具 [CorpNewt](https://github.com/corpnewt) 和 [headkaze](https://github.com/headkaze/Hackintool)
 
-完整的EFI可在 [releases](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) 页
+完整的EFI可在 [releases](https://github.com/kikileaf/kikileaf-ThinkPad-X230-MacOS-with-OpenCore/releases) 页
 
 </details>
 
