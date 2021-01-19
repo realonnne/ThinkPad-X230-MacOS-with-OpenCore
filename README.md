@@ -80,7 +80,7 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.0.1`）正在使用ThinkPad X230
 
 </details>
 
-## Installation
+## 安装
 
 <details>
 <summary><strong>如何安装macOS</strong></summary>
