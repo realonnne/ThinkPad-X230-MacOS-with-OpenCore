@@ -1,4 +1,4 @@
-DefinitionBlock ("", "SSDT", 2, "X230", "KBD", 0)
+	DefinitionBlock ("", "SSDT", 2, "X230", "KBD", 0)
 {
     External (_SB.PCI9.FNOK, IntObj)
     External (_SB.PCI9.MODE, IntObj)
@@ -11,8 +11,6 @@ DefinitionBlock ("", "SSDT", 2, "X230", "KBD", 0)
     External (_SB.PCI0.LPC.EC.XQ15, MethodObj)
     External (_SB.PCI0.LPC.EC.XQ16, MethodObj)
     External (_SB.PCI0.LPC.EC.XQ64, MethodObj)
-    External (_SB.PCI0.LPC.EC.XQ1F, MethodObj)
-    External (_SB.PCI0.LPC.EC.HKEY.MMTS, MethodObj)
     External (_SB.PCI0.LPC.EC.HKEY.MLCS, MethodObj)
 
     Scope (_SB.PCI0.LPC.EC)
@@ -120,48 +118,6 @@ DefinitionBlock ("", "SSDT", 2, "X230", "KBD", 0)
                 \_SB.PCI0.LPC.EC.XQ64 ()
             }
         }
-        
-        Name (LED2, Zero)
-        Method (_Q1F, 0, NotSerialized)
-        {
-            If (_OSI ("Darwin"))
-          	{
-                If ((LED2 == Zero))
-                {
-                    Notify (KBD, 0x0136)
-                    Notify (KBD, 0x0367)
-                    Notify (KBD, 0x01b6)
-                    \_SB.PCI0.LPC.EC.HKEY.MLCS (One)
-                    LED2 = One
-                }
-                Else
-                {
-                    If ((LED2 == One))
-                    {
-                        Notify (KBD, 0x012a)
-                        Notify (KBD, 0x036a)
-                        Notify (KBD, 0x01aa)
-                        \_SB.PCI0.LPC.EC.HKEY.MLCS (0x02)
-                        LED2 = 2
-                    }
-                    Else
-                    {
-                        If ((LED2 == 2))
-                        {
-                            Notify (KBD, 0x012a)
-                            Notify (KBD, 0x0367)
-                            Notify (KBD, 0x01aa)
-                            \_SB.PCI0.LPC.EC.HKEY.MLCS (Zero)
-                            LED2 = Zero
-                        }
-          	            Else
-          	            {
-                            \_SB.PCI0.LPC.EC.XQ1F ()
-          	            }
-                    }
-                }
-            }
-        }
     }
     
     Scope (_SB.PCI0.LPC.KBD)
@@ -184,10 +140,6 @@ DefinitionBlock ("", "SSDT", 2, "X230", "KBD", 0)
         {
             "Keyboard", Package()
             {
-                "ActionSwipeLeft",  "37 d, 21 d, 21 u, 37 u",
-                "ActionSwipeRight", "37 d, 1e d, 1e u, 37 u",
-                "SleepPressTime",   "1500",
-                "Swap command and option", ">y",
                 "Custom PS2 Map", Package()
                     {
                         Package() {},

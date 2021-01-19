@@ -1,112 +1,102 @@
-#具有OpenCore的ThinkPad X230 MacOS
+# ThinkPad X230 MacOS with OpenCore
 
-在ThinkPad X230上运行的MacOS（当前为Catalina`10.15.6`）
+MacOS（目前为Catalina'10.15.7'和Big-Sur'11.0.1`）正在使用ThinkPad X230
 
-**状态：进行中**
+**状态：正在工作**
 
-<img align="right" src="https://ftp.bmp.ovh/imgs/2020/10/afdccda005d2aed8.png" alt="ThinkPad X230 Catalina" width="300"/>
+[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.3-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-brightgreen.svg)](https://www.apple.com/macos/catalina/) [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.0.1-purple.svg)](https://www.apple.com/macos/big-sur/)
 
-[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.2-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.6-brightgreen.svg)](https://www.apple.com/macos/catalina/)
+**免责声明:** 在开始之前，请阅读完整的自述文件。我对你可能造成的任何损失概不负责。
 
-**免责声明：**
-开始之前请阅读整个自述文件。我对您可能造成的任何损失不承担任何责任。
-
-## 介绍
+## Introduction
 
 <details>
-
 <summary><strong>我的硬件</strong></summary>
 
-| Specifications      | Detail                                      |
+| 规格                | 细节                                        |
 | :------------------ | :------------------------------------------ |
-| Computer model      | Lenovo ThinkPad X230 (Type: 2325)           |
-| Processor           | Intel Core i7-3520M (2C4T, 2.9/3.6Ghz, 4MB) |
-| Memory              | Crucial 16GB DDR3L 1867MHz, dual-channel    |
-| Hard Disk           | Crucial BX500 3D-NAND 240GB                 |
-| Integrated Graphics | Intel HD Graphics 4000                      |
-| Display             | 12.5" HD (1366x768) TN - B125XW01.V0        |
-| Audio               | Realtek ALC3202 (Layout-id: `18`)           |
-| Ethernet            | Intel 82579LM Gigabit Network Connection    |
-| WIFI+BT             | AzureWave AW-CB160H (BCM94360HMB)           |
-| Keyboard            | 6-row, multimedia Fn keys, LED backlight    |
-| Dock                | ThinkPad UltraBase Series 3                 |
+| 计算机型号          | Lenovo ThinkPad X230 (Type: 2325)           |
+| CPU                 | Intel Core i5-3380M (2C4T, 2.9/3.6Ghz, 3MB) |
+| 内存                | Crucial 16GB DDR3L 1600MHz, dual-channel    |
+| 硬盘                | Samsung 860 Evo 250GB                       |
+| 显卡                | Intel HD Graphics 4000                      |
+| 屏幕                | 12.5" HD (1366x768)                         |
+| 声卡                | Realtek ALC3202 (Layout-id: `18`)           |
+| 以太网卡            | Intel 82579LM Gigabit Network Connection    |
+| WIFI+BT             | AzureWave AW-CE123H (BCM94360HMB)           |
+| 键盘                | 7排, 多功能 Fn 键盘,                        |
+| Dock                | ThinkPad Mini Dock Plus系列3                |
 
 </details>
 
 <details>
-
 <summary><strong>硬件兼容性</strong></summary>
 
-This EFI will suit any X230 regardless of CPU model, amount of RAM, display resolution, and internal storage.
+无论CPU型号、RAM数量、显示分辨率和内部存储，该EFI都适用于任何X230。
 
-  1. Optional custom CPU Power Management guide (see below post-install)
-  1. Modified
-      - 1440p display models should change `NVRAM>>Add>>7C436110-AB2A-4BBB-A880-FE41995C9F82>>UIScale`: 2
-      - X220 7-row keyboard should use : `SSDT-X220-KBD.aml`
+  1. 可选的自定义CPU电源管理指南（请参阅下面的安装后）
+  2. 被改进的
+      - 1440p显示器型号应该改变 `NVRAM>>Add>>7C436110-AB2A-4BBB-A880-FE41995C9F82>>UIScale`: 2
 
 </details>
 
 <details>
+<summary><strong>主软件</strong></summary>
 
-<summary><strong>主要软件</strong></summary>
-
-| Component      | Version           |
+| 组成部分       | 版本              |
 | :------------- | :---------------- |
-| MacOS Catalina | 10.15.6 (19G2021) |
-| OpenCore       | 0.6.2             |
+| MacOS Big Sur  | 11.0.1            |
+| MacOS Catalina | 10.15.7           |
+| OpenCore       | 0.6.3             |
 
 </details>
 
 <details>
-
 <summary><strong>内核扩展</strong></summary>
 
-| Kext                | Version |
+| Kext                | 版本 |
 | :------------------ | :------ |
-| AirportBrcmFixup    | 2.0.9   |
-| AppleALC            | 1.5.2   |
-| BrcmPatchRAM        | 2.5.4   |
+| AirportBrcmFixup    | 2.1.1   |
+| AppleALC            | 1.5.4   |
+| BrcmPatchRAM        | 2.5.5   |
 | EFICheckDisabler    | 0.5.0   |
-| IntelMausi          | 1.0.3   |
-| Lilu                | 1.4.7   |
-| USBPorts            |         |
-| VirtualSMC          | 1.1.6   |
-| VoodooPS2Controller | 2.1.6   |
-| WhateverGreen       | 1.4.2   |
+| IntelMausi          | 1.0.4   |
+| Lilu                | 1.4.9   |
+| USBInjectAll        | 0.7.1   |
+| VirtualSMC          | 1.1.8   |
+| VoodooPS2Controller | 2.1.8   |
+| WhateverGreen       | 1.4.4   |
 
 </details>
 
 <details>
+<summary><strong>UEFI drivers</strong></summary>
 
-<summary><strong>UEFI驱动程序</strong></summary>
-
-| Driver          | Version           |
+| Driver          | 版本           |
 | :-------------- | :---------------- |
 | HfsPlus.efi     | OcBinaryData      |
-| OpenRuntime.efi | OpenCorePkg 0.6.2 |
+| OpenCanopy.efi  | OpenCorePkg 0.6.3 |
+| OpenRuntime.efi | OpenCorePkg 0.6.3 |
 
 </details>
 
-
-## 安装
+## Installation
 
 <details>
-
 <summary><strong>如何安装macOS</strong></summary>
 
-要安装macOS，请遵循提供的指南 [Dortania](https://dortania.github.io/getting-started/)
+要安装macOS，请遵循 [Dortania](https://dortania.github.io/getting-started/)
 
-有用的工具 [CorpNewt](https://github.com/corpnewt) 和 [headkaze](https://github.com/headkaze/Hackintool)
+有用的工具[CorpNewt](https://github.com/corpnewt) 和 [headkaze](https://github.com/headkaze/Hackintool)
 
-完整的EFI可在 [releases](https://github.com/kikileaf/kikileaf-ThinkPad-X230-MacOS-with-OpenCore/releases) 页
+完整的EFI可在 [releases](https://github.com/kikileaf/kikileaf-ThinkPad-X230-MacOS-with-OpenCore/releases/latest) page
 
 </details>
 
 <details>
-
 <summary><strong>BIOS设置 :100:</strong></summary>
 
-提供了一种安装修改后的BIOS的简单方法 [here](https://github.com/n4ru/1vyrain/) (无需外部编程器).
+一个简单的方法来安装修改后的BIOS是可用的 [here](https://github.com/n4ru/1vyrain/) (no external programmer required).
 
 | Main | Sub #1                                 | Sub #2 | Sub #3 | Setting |
 | :------------ | :----------- | ------------- | ------------- | ------------- |
@@ -124,37 +114,37 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 
 </details>
 
-## 安装后
+## Post-install
 
 <details>
+<summary><strong>Generate your own SMBIOS</strong></summary>
 
-<summary><strong>生成自己的SMBIOS</strong></summary>
+For setting up the SMBIOS info, use [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
 
-对于设置SMBIOS信息,使用[GenSMBIOS] (https://github.com/corpnewt/GenSMBIOS)
-
-- GenSMBIOS运行,选择选项1下载MacSerial SMBIOS选项3和选择
+- Run GenSMBIOS, pick option 1 for downloading MacSerial and Option 3 for selecting out SMBIOS
 
   - MacBookPro10,2
+  - MacBookPro11,5 (Big Sur dropped support 10,x and older)
 
-- 打开 `Config.plist`,找到PlatformInfo > >通用
+- Open `Config.plist`, find PlatformInfo >> Generic
 
-  - 复制 `Serial` 到 SystemSerialNumber.
+  - The `Serial` part gets copied to SystemSerialNumber.
 
-  - 复制 `Board Serial` 到 MLB.
+  - The `Board Serial` part gets copied to MLB.
 
-  - 复制 `SmUUID` 到 SystemUUID.
+  - The `SmUUID` part gets copied to SystemUUID.
 
-* *提醒,你想要一个无效的串行或有效的序列号,但那些没有在使用,你想拿回一个消息:“Purchase Date not Validated”* *(苹果序列号检查)(https://checkcoverage.apple.com/)
+**Reminder that you want either an invalid serial or valid serial numbers but those not in use, you want to get a message back like: "Invalid Serial" or "Purchase Date not Validated"** [Apple Check Coverage](https://checkcoverage.apple.com/)
 
 </details>
 
 <details>
+<summary><strong>CPU power management</strong></summary>
 
-<summary><strong>CPU电源管理</strong></summary>
+Recommended additional steps to improve battery life with optimized CPU power management:
 
-推荐额外的步骤来改善与优化电池寿命CPU电源管理:
-
-- 打开终端,复制并粘贴以下命令:
+- Open Config.plist, enable `ACPI>>Delete` : Drop CpuPm and Drop Cpu0Ist
+- Open Terminal, copy and paste the following command:
 
   ```bash
   curl -o ~/ssdtPRGen.sh https://raw.githubusercontent.com/Piker-Alpha/ssdtPRGen.sh/master/ssdtPRGen.sh
@@ -162,22 +152,22 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
   ./ssdtPRGen.sh
   ```
 
-- 一个定制的 `SSDT.aml` 将在目录 **/Users/yourusername/Library/ssdtPRGen**中
+- A customized `SSDT.aml` for your specific machine will now be in the directory **/Users/yourusername/Library/ssdtPRGen**
 
+- Rename to `SSDT-PM.aml` , and copy to **EFI/OC/ACPI/**
 
-- 重命名为 `SSDT-PM.aml` ,复制到 **EFI/OC/ACPI/**
+- Open `Config.plist`, enable `ACPI>>Add>>SSDT-PM.aml`
 
-- 打开 `Config.plist`, 添加 `ACPI>>Add>>SSDT-PM.aml`
+- Reboot
 
-- 重启
+- Disable Drop CpuPm and Drop Cpu0Ist
 
 </details>
 
 <details>
+<summary><strong>USB ports map</strong></summary>
 
-<summary><strong>USB 端口模拟</strong></summary>
-
-如果您使用的是不同的模型和kext从不为你工作。试一试:
+If you are using different model and alternative kext from Other folder does not work for you. Try:
 
 - [USBMap](https://github.com/corpnewt/USBMap)
 
@@ -186,74 +176,74 @@ This EFI will suit any X230 regardless of CPU model, amount of RAM, display reso
 </details>
 
 <details>
+<summary><strong>Fully functioning multimedia Fn keys</strong></summary>
 
-<summary><strong>功能齐全的多媒体Fn的钥匙</strong></summary>
+- Download and install [ThinkpadAssistant](https://github.com/MSzturc/ThinkpadAssistant/releases)
+- Open the app and check the `launch on login` option
 
-- 下载并安装(ThinkpadAssistant) (https://github.com/MSzturc/ThinkpadAssistant/releases)
-- 打开应用程序,检查“登录启动”选项
+</details>
+
+<details>
+<summary><strong>Use PrtSc key as Screenshot shortcut</strong></summary>
+
+- Go under `SystemPreferences > Keyboard > Shortcuts > Screenshots`
+- Click on `Screenshot and recording options` key map
+- Press `PrtSc` on your keyboard (it should came out as `F13`)
+
+</details>
+
+## Status
+
+<details>
+<summary><strong>What's working :white_check_mark:</strong></summary>
+
+- [x] Battery Percentage
+- [x] Bluetooth
+- [x] Brightness
+- [x] Camera
+- [x] CPU Power Management
+- [x] Dock Support `ThinkPad UltraSeries 3`
+- [x] GPU Intel HD 4000 Graphics QE/CI
+- [x] Intel Ethernet
+- [x] Keyboard `Volume and brightness hotkeys`
+- [x] Sleep/Wake
+- [x] Sound `Automatic headphone detection, mute, volume controls fully working`
+- [x] Touchpad `1-4 fingers swipe works`
+- [x] TrackPoint  `Works perfectly. Just like on Windows or Linux`
+- [x] eGPU  (Thanks [lese9855](https://github.com/lese9855) have confirmed it [#11](https://github.com/banhbaoxamlan/X230-Hackintosh/issues/11))
 
 </details>
 
 <details>
 
-<summary><strong>使用PrtSc截图快捷键</strong></summary>
+<summary><strong>What's not working :warning:</strong></summary>
 
-- 路径 `SystemPreferences > Keyboard > Shortcuts > Screenshots`
-- 点击截图和记录选项键映射
-- “敲击PrtSc”在你的键盘(应该是“F13”)
-
-</details>
-
-<details>  
-<summary><strong>Mac引导装载程序GUI</strong></summary>
-
-- 下载二进制资源(https://github.com/acidanthera/OcBinaryData)和(OpenCanopy.efi) (https://github.com/acidanthera/OpenCorePkg/releases)
-- 复制 [Resources folder](https://github.com/acidanthera/OcBinaryData) 到 `EFI/OC`
-- 添加 OpenCanopy.efi 到 `EFI/OC/Drivers`
-- 添加这些改变到 `config.plist`:
-    - `Misc >> Boot >> PickerMode`: `External`
-    - `Misc >> Boot >> PickerAttributes`:`1`
-    - `UEFI >> Drivers` 并添加 `OpenCanopy.efi`
-
-</details>
-
-## 状态
-
-<details>
-<summary><strong>什么在工作 :white_check_mark:</strong></summary>
-
-- [x] 电池百分比
-- [x] 蓝牙
-- [x] 亮度
-- [x] 相机
-- [x] CPU电源管理
-- [x] 码头支持“ThinkPad UltraSeries 3 '
-- [x] 英特尔HD 4000 - [x] GPU图形QE / CI
-- [x] 英特尔以太网
-- [x] 键盘的数量和亮度快捷键
-- [x] 睡眠/唤醒
-- [x] 声音的耳机自动检测、静音、音量控制完全工作的
-- [x] Touchpad的手指滑动作品的
-- [x] 小红帽很完美。就像在Windows或Linux上一样
-- [x]  eGPU  (由 [lese9855](https://github.com/lese9855) 已经证实 [#11](https://github.com/banhbaoxamlan/X230-Hackintosh/issues/11))
-
-</details>
-
-<details>
-
-<summary><strong>什么不可以用 :warning:</strong></summary>
-
-- [ ] 指纹阅读器
+- [ ] Fingerprint Reader
 - [ ] VGA
-- [ ] SD读卡器 (禁用`SSDT-SDC.aml`)
+- [ ] SD Card Reader (Disable with `SSDT-SDC.aml`)
 
 </details>
 
 <details>
 
-<summary><strong>已知Bugr :heavy_exclamation_mark:</strong></summary>
+<summary><strong>Bug tracker :heavy_exclamation_mark:</strong></summary>
 
-- [ ] 小红帽从睡眠中醒来后不工作
+- [ ] Trackpoint not working after wake from sleep
 
 </details>
 
+## Credits
+
+[Apple](https://www.apple.com) for macOS
+
+[Acidanthera](https://github.com/acidanthera) for all the kexts/utilities that they made
+
+[Rehabman](https://github.com/RehabMan) and [Daliansky](https://github.com/daliansky) for the patches and guides and kexts
+
+[George Kushnir](https://github.com/n4ru) for modified BIOS
+
+[Dortania](https://github.com/dortania) for for the OpenCore Install Guide
+
+[MSzturc](https://github.com/MSzturc) for ThinkpadAssistant
+
+[simprecicchiani](https://github.com/simprecicchiani) for inspirational ThinkPad configurations
