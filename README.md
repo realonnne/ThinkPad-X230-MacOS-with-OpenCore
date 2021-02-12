@@ -116,4 +116,4 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.0.1`）正在使用ThinkPad X230
 </details>
 
 ### 打赏
-![Donate](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-OpenCore/blob/main/Support.png)
+![Donate](https://s3.ax1x.com/2021/02/12/yrVp3d.png)
