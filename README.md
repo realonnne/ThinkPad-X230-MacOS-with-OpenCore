@@ -4,7 +4,7 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.0.1`）正在使用ThinkPad X230
 
 **状态：正在工作**
 
-[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-OpenCore/releases) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.3-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-brightgreen.svg)](https://www.apple.com/macos/catalina/) [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.0.1-purple.svg)](https://www.apple.com/macos/big-sur/)
+[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-OpenCore/releases) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.6-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-brightgreen.svg)](https://www.apple.com/macos/catalina/) [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.0.1-purple.svg)](https://www.apple.com/macos/big-sur/)
 
 **免责声明:** 在开始之前，请阅读完整的自述文件。我对你可能造成的任何损失概不负责。
 [![捐赠](https://img.shields.io/badge/%E6%8D%90%E8%B5%A0-%E6%94%AF%E4%BB%98%E5%AE%9D-blue)](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-OpenCore/blob/main/Support.png) [![捐赠](https://img.shields.io/badge/%E6%8D%90%E8%B5%A0-%E5%BE%AE%E4%BF%A1-green)](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-OpenCore/blob/main/Support.png)
