@@ -1,13 +1,13 @@
-# ThinkPad X230 MacOS with 打开Core
+# ThinkPad X230 MacOS with OpenCore
 
 MacOS（目前为Catalina'10.15.7'和Big-Sur'11.2`）正在使用ThinkPad X230
 
 **状态：正在工作**
 
-[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) [![打开Core](https://img.shields.io/badge/打开Core-0.6.6-blue.svg)](https://github.com/acidanthera/打开CorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-brightgreen.svg)](https://www.apple.com/macos/catalina/) [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.2-purple.svg)](https://www.apple.com/macos/big-sur/)
+[![ThinkPad](https://img.shields.io/badge/ThinkPad-X230-blue.svg)](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_X230.pdf) [![release](https://img.shields.io/badge/Download-latest-brightgreen.svg)](https://github.com/banhbaoxamlan/X230-Hackintosh/releases/latest) [![OpenCore](https://img.shields.io/badge/OpenCore-0.6.6-blue.svg)](https://github.com/acidanthera/OpenCorePkg/releases/latest) [![MacOS Catalina](https://img.shields.io/badge/macOS-10.15.7-brightgreen.svg)](https://www.apple.com/macos/catalina/) [![MacOS Big Sur](https://img.shields.io/badge/macOS-11.2-purple.svg)](https://www.apple.com/macos/big-sur/)
 
 **免责声明:** 在开始之前，请阅读完整的自述文件。我对你可能造成的任何损失概不负责。
-[![捐赠](https://img.shields.io/badge/%E6%8D%90%E8%B5%A0-%E6%94%AF%E4%BB%98%E5%AE%9D-blue)](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-打开Core/blob/main/Support.png) [![捐赠](https://img.shields.io/badge/%E6%8D%90%E8%B5%A0-%E5%BE%AE%E4%BF%A1-green)](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-打开Core/blob/main/Support.png)
+[![捐赠](https://img.shields.io/badge/%E6%8D%90%E8%B5%A0-%E6%94%AF%E4%BB%98%E5%AE%9D-blue)](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-OpenCore/blob/main/Support.png) [![捐赠](https://img.shields.io/badge/%E6%8D%90%E8%B5%A0-%E5%BE%AE%E4%BF%A1-green)](https://github.com/kikileaf/ThinkPad-X230-MacOS-with-OpenCore/blob/main/Support.png)
 
 ## 介绍
 
@@ -48,7 +48,7 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.2`）正在使用ThinkPad X230
 | :------------- | :---------------- |
 | MacOS Big Sur  | 11.0.1            |
 | MacOS Catalina | 10.15.7           |
-| 打开Core       | 0.6.3             |
+| OpenCore       | 0.6.3             |
 
 </details>
 
@@ -76,9 +76,9 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.2`）正在使用ThinkPad X230
 
 | Driver          | 版本           |
 | :-------------- | :---------------- |
-| 打开HfsPlus.efi | 打开CorePkg 0.6.6 |
-| 打开Canopy.efi  | 打开CorePkg 0.6.6 |
-| 打开Runtime.efi | 打开CorePkg 0.6.6 |
+| OpenHfsPlus.efi | OpenCorePkg 0.6.6 |
+| OpenCanopy.efi  | OpenCorePkg 0.6.6 |
+| OpenRuntime.efi | OpenCorePkg 0.6.6 |
 
 </details>
 
@@ -91,7 +91,7 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.2`）正在使用ThinkPad X230
 
 有用的工具[CorpNewt](https://github.com/corpnewt) 和 [headkaze](https://github.com/headkaze/Hackintool)
 
-完整的EFI可在 [releases](https://github.com/kikileaf/kikileaf-ThinkPad-X230-MacOS-with-打开Core/releases/latest) page
+完整的EFI可在 [releases](https://github.com/kikileaf/kikileaf-ThinkPad-X230-MacOS-with-OpenCore/releases/latest) page
 
 </details>
 
@@ -179,7 +179,7 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.2`）正在使用ThinkPad X230
 <summary><strong>功能齐全的多媒体Fn键</strong></summary>
 
 - 下载并安装  [ThinkpadAssistant](https://github.com/MSzturc/ThinkpadAssistant/releases)
-- 打开 打开应用程序并检查 `launch on login` 选项
+- 打开应用程序并检查 `launch on login` 选项
 
 </details>
 
