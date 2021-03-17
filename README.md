@@ -193,5 +193,37 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.2`）正在使用ThinkPad X230
 
 </details>
 
+## 状态
+
+<details>
+<summary><strong>能用的和不能用的</strong></summary>
+
+- [√] 电池百分比
+- [√] 蓝牙
+- [√] 亮度调节
+- [√] 摄像头
+- [√] CPU电源管理
+- [√] 支持基座`ThinkPad UltraSeries 3`
+- [√] GPU Intel HD 4000 图形 QE/CI
+- [√] 英特尔以太网
+- [√] 键盘 `音量和亮度热键`
+- [√] 睡眠/唤醒
+- [√] 声音`耳机自动检测，静音，音量控制完全工作`
+- [√] 触摸板`1-4个手指滑动工作`
+- [√] TrackPoint工作得很好。就像在Windows或Linux上一样`
+- [√] eGPU 
+
+</details>
+
+<details>
+
+<summary><strong>什么不起作用：警告：</strong></summary>
+
+- [ ] 指纹阅读器
+- [ ] VGA
+- [ ] SD卡读卡器 (禁止使用 `SSDT-SDC.aml`)
+
+</details>
+
 ### 打赏
 ![Donate](https://s3.ax1x.com/2021/02/12/yrVp3d.png)
