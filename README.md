@@ -72,9 +72,9 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.2`）正在使用ThinkPad X230
 </details>
 
 <details>
-<summary><strong>UEFI drivers</strong></summary>
+<summary><strong>UEFI 驱动</strong></summary>
 
-| Driver          | 版本           |
+| 驱动            | 版本              |
 | :-------------- | :---------------- |
 | OpenHfsPlus.efi | OpenCorePkg 0.6.6 |
 | OpenCanopy.efi  | OpenCorePkg 0.6.6 |
