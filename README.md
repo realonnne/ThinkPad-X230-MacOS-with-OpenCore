@@ -115,7 +115,8 @@ MacOS（目前为Catalina'10.15.7'和Big-Sur'11.2`）正在使用ThinkPad X230
 |  |  | CSM Support |  | Disabled |
 
 </details>
-## 安装后的工作
+
+## 安装后
 
 <details>
 <summary><strong>生成自己的SMBIOS</strong></summary>
